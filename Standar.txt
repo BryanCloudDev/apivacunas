@@ -1,4 +1,6 @@
-Toda la informacion se manejara en ingles.
+Toda la informacion en cuanto a codigo, nombres, bases de datos e informacion dentro de la misma API se manejara en ingles
+con la unica excepcion de este documento para mayor comprensibilidad de sus elementos internos (API) y posteriormente la informacion que se muestre al usuario
+a menos que se decida que dicha informacion se muestre en ingles tambien. Pero eso se decididira en el futuro cuando se cree el Front End.
 
 ###BASE DE DATOS###
 
