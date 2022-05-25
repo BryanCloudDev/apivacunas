@@ -23,7 +23,7 @@ Route::controller(PopulationController::class)->group(function()
     {
         Route::get('/populations', 'index');
         Route::post('/population', 'store');
-        Route::get('/population/{state_id}', 'show');
-        Route::put('/population/{state_id}', 'update');
-        Route::delete('/population/{state_id}', 'destroy');
+        Route::get('/population/{id}', 'show');
+        Route::put('/population/{id}', 'update');
+        Route::delete('/population/{id}', 'destroy');
     });
