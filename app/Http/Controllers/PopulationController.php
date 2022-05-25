@@ -26,15 +26,15 @@ class PopulationController extends Controller
                 return $population;
             }
 
-        public function show($id)
+        public function show($state_id)
             {
-                $population = Population::find($id);
+                $population = Population::find($state_id);
                 return $population;
             }
 
-        public function update(Request $request, $id)
+        public function update(Request $request, $state_id)
             {
-                $population = Population::findOrFail($request->id);
+                $population = Population::findOrFail($request->state_id);
 
                 $population->states                     = $request->states;
                 $population->total_population           = $request->total_population;
@@ -46,9 +46,9 @@ class PopulationController extends Controller
                 return $population;
             }
 
-        public function destroy($id)
+        public function destroy($state_id)
             {
-                $population = Population::destroy($id);
+                $population = Population::destroy($state_id);
                 return $population;
             }
     }

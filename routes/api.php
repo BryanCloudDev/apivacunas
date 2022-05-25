@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PopulationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::controller(PopulationController::class)->group(function()
+    {
+        Route::get('/population', 'index');
+        Route::post('/population', 'store');
+        Route::get('/population/{state_id}', 'show');
+        Route::put('/population/{state_id}', 'update');
+        Route::delete('/population/{state_id}', 'destroy');
+    });
