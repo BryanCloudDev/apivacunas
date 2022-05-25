@@ -28,17 +28,19 @@ col3: total_population
 col4: unvaccinated_population
 col5: vaccinated_population
 
-###ARCHIVOS###
+###MODELOS###
 
-///////////////
+$fill = para guardar el arreglo con los nombres de las columnas de la tabla
 
-###VARIABLES###
+###METODOS###
 
-///////////////
+Metodos dentro de los controladores para los verbos http
 
-###CLASES###
-
-///////////////
+index()     /para mostrar todo
+store()     /para almacenar informacion
+show()      /mostrar informacion por in
+update()    /para actualizar la informacion por id
+destroy()   /eliminar registros por id
 
 ###RUTAS###
 
