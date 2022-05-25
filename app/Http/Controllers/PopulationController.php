@@ -8,8 +8,8 @@ class PopulationController extends Controller
     {
         public function index()
             {
-                $population = Population::all();
-                return $population;
+                $populations = Population::all();
+                return $populations;
             }
 
         public function store(Request $request)
