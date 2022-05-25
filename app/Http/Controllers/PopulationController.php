@@ -35,14 +35,11 @@ class PopulationController extends Controller
         public function update(Request $request, $id)
             {
                 $population = Population::findOrFail($request->id);
-
                 $population->states                     = $request->states;
                 $population->total_population           = $request->total_population;
                 $population->unvaccinated_population    = $request->unvaccinated_population;
                 $population->vaccinated_population      = $request->vaccinated_population;
-
                 $population->save();
-
                 return $population;
             }
 
