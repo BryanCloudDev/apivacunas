@@ -18,7 +18,9 @@ class TypeOfVaccineController extends Controller
         $vaccine->available_quantity    = $request->available_quantity;
         $vaccine->vaccine_type          = $request->vaccine_type;
         $vaccine->vaccine_creator       = $request->vaccine_creator;
+        
         $vaccine->save();
+
         return response()->json([
             'status' => 200,
             'response' => 'Register was succcesfully added',

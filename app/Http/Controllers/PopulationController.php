@@ -23,13 +23,25 @@ class PopulationController extends Controller
 
                 $population->save();
 
-                return $population;
+                return response()->json([
+                    'status' => 200,
+                    'response' => 'Register was succcesfully added',
+                    'details' => $population
+                ]);
             }
 
         public function show($id)
             {
                 $population = Population::find($id);
-                return $population;
+                if($population){
+                    return $population;
+                }
+                else{
+                    return response()->json([
+                        'status' => 404,
+                        'response' => 'Register was not found'
+                    ]);
+                }
             }
 
         public function update(Request $request, $id)
@@ -40,13 +52,29 @@ class PopulationController extends Controller
                 $population->unvaccinated_population    = $request->unvaccinated_population;
                 $population->vaccinated_population      = $request->vaccinated_population;
                 $population->save();
-                return $population;
+                
+                return response()->json([
+                    'status' => 200,
+                    'response' => 'Register was succesfully updated',
+                    'details' => $population
+                ]);
             }
 
         public function destroy($id)
             {
                 $population = Population::destroy($id);
-                return $population;
+                if($population == 1){
+                    return response()->json([
+                            'status' => 200,
+                            'response' => 'Register was succesfully deleted'
+                        ]);
+                }
+                else{
+                    return response()->json([
+                        'status' => 404,
+                        'response' => 'Register was not found'
+                    ]);
+                }
             }
     }
 
