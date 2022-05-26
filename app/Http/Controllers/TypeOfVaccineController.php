@@ -1,19 +1,19 @@
 <?php
 namespace App\Http\Controllers;
-use App\Models\Types_of_vaccine;
+use App\Models\TypesOfVaccine;
 use Illuminate\Http\Request;
 
 class TypeOfVaccineController extends Controller
 {
     public function index () 
     {
-        $typeOfVaccine = Types_of_vaccine::all();
+        $typeOfVaccine = TypesOfVaccine::all();
         return $typeOfVaccine;
     }
 
     public function store(Request $request)
     {
-        $vaccine = new Types_of_vaccine();
+        $vaccine = new TypesOfVaccine();
         $vaccine->vaccine_name          = $request->vaccine_name;
         $vaccine->available_quantity    = $request->available_quantity;
         $vaccine->vaccine_type          = $request->vaccine_type;
@@ -30,7 +30,7 @@ class TypeOfVaccineController extends Controller
 
     public function show($id)
     {
-        $vaccine = Types_of_vaccine::find($id);
+        $vaccine = TypesOfVaccine::find($id);
         if($vaccine){
             return $vaccine;
         }
@@ -44,7 +44,7 @@ class TypeOfVaccineController extends Controller
 
     public function update(Request $request, $id)
     {
-        $vaccine = Types_of_vaccine::findOrFail($request->id);
+        $vaccine = TypesOfVaccine::findOrFail($request->id);
         $vaccine->vaccine_name          = $request->vaccine_name;
         $vaccine->available_quantity    = $request->available_quantity;
         $vaccine->vaccine_type          = $request->vaccine_type;
@@ -59,7 +59,7 @@ class TypeOfVaccineController extends Controller
     }
 
     public function destroy($id)
-    {   $register = Types_of_vaccine::destroy($id);
+    {   $register = TypesOfVaccine::destroy($id);
         if($register == 1){
             return response()->json([
                     'status' => 200,
