@@ -24,7 +24,7 @@ class PopulationController extends Controller
             $population->save();
 
             return response()->json([
-                'status' => 200,
+                'status' => 201,
                 'response' => 'Register was succcesfully added',
                 'details' => $population
             ]);
@@ -54,7 +54,7 @@ class PopulationController extends Controller
             $population->save();
             
             return response()->json([
-                'status' => 200,
+                'status' => 202,
                 'response' => 'Register was succesfully updated',
                 'details' => $population
             ]);
