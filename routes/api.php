@@ -27,3 +27,8 @@ Route::controller(TypeOfVaccineController::class)->group(function()
         Route::delete('/vaccines/{id}', 'destroy');
     }
 );
+
+Route::controller(RegisterController::class)->group(function(){
+    Route::post('register', 'register');
+    Route::post('login', 'login');
+});

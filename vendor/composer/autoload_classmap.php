@@ -21,7 +21,7 @@ return array(
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Models\\Population' => $baseDir . '/app/Models/Population.php',
-    'App\\Models\\Types_of_vaccine' => $baseDir . '/app/Models/Types_of_vaccine.php',
+    'App\\Models\\TypesOfVaccine' => $baseDir . '/app/Models/TypesOfVaccine.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
