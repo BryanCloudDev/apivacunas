@@ -22,7 +22,7 @@ Route::controller(PopulationController::class)->group(function()
 Route::controller(TypeOfVaccineController::class)->group(function()
     {
         Route::get('/vaccines', 'index');
-        Route::get('/vaccines/types/{vaccine_name}','types');
+        Route::get('/vaccines/types/{vaccine_name}','showTypeVaccine');
         Route::post('/vaccines', 'store');
         Route::get('/vaccines/{id}', 'show');
         Route::put('/vaccines/{id}', 'update');
