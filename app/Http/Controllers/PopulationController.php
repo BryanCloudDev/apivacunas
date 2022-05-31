@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class PopulationController extends Controller
 {
+
+    public function showStates($state){
+        return Population::where("states",$state)->get();
+    }
+
     public function index()
         {
             $populations = Population::all();

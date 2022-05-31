@@ -9,6 +9,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::controller(PopulationController::class)->group(function()
     {
+        Route::get('/population/states/{states}','showStates');
         Route::get('/populations', 'index');
         Route::get('/population/{id}', 'show');
         Route::post('/population', 'store');
