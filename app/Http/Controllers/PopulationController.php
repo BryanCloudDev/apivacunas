@@ -32,7 +32,7 @@ class PopulationController extends Controller
                 'status' => 201,
                 'response' => 'Register was succcesfully added',
                 'details' => $population
-            ]);
+            ],201);
         }
 
     public function show($id)
@@ -57,12 +57,12 @@ class PopulationController extends Controller
             $population->unvaccinated_population    = $request->unvaccinated_population;
             $population->vaccinated_population      = $request->vaccinated_population;
             $population->save();
-            
+
             return response()->json([
                 'status' => 202,
                 'response' => 'Register was succesfully updated',
                 'details' => $population
-            ]);
+            ],202);
         }
 
     public function destroy($id)
@@ -78,7 +78,7 @@ class PopulationController extends Controller
                 return response()->json([
                     'status' => 404,
                     'response' => 'Register was not found'
-                ]);
+                ],404);
             }
         }
 }

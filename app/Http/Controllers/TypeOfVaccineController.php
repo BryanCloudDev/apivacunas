@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 class TypeOfVaccineController extends Controller
 {
     public function showTypeVaccine($types){
-        return TypesOfVaccine::where("vaccine_name",$types)->get(); 
+        return TypesOfVaccine::where("vaccine_name",$types)->get();
     }
 
-    public function index () 
+    public function index ()
     {
         $typeOfVaccine = TypesOfVaccine::all();
         return $typeOfVaccine;
@@ -22,14 +22,14 @@ class TypeOfVaccineController extends Controller
         $vaccine->available_quantity    = $request->available_quantity;
         $vaccine->vaccine_type          = $request->vaccine_type;
         $vaccine->vaccine_creator       = $request->vaccine_creator;
-        
+
         $vaccine->save();
 
         return response()->json([
             'status' => 201,
             'response' => 'Register was succcesfully added',
             'details' => $vaccine
-        ]);
+        ],201);
     }
 
     public function show($id)
@@ -59,7 +59,7 @@ class TypeOfVaccineController extends Controller
             'status' => 202,
             'response' => 'Register was succesfully updated',
             'details' => $vaccine
-        ]);
+        ],202);
     }
 
     public function destroy($id)
@@ -74,7 +74,7 @@ class TypeOfVaccineController extends Controller
             return response()->json([
                 'status' => 404,
                 'response' => 'Register was not found'
-            ]);
+            ],404);
         }
     }
 }
