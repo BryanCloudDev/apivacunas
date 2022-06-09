@@ -78,7 +78,7 @@ class PopulationController extends Controller
                 return response()->json([
                     'status' => 404,
                     'response' => 'Register was not found'
-                ],404);
+                ]);
             }
         }
 }
