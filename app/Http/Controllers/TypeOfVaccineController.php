@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 class TypeOfVaccineController extends Controller
 {
     public function showTypeVaccine($types){
-        return TypesOfVaccine::where("vaccine_name",$types)->get();
+        return TypesOfVaccine::where("vaccine_name","like", "%".$types."%")->get();
     }
 
     public function index ()

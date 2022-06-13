@@ -8,7 +8,7 @@ class PopulationController extends Controller
 {
 
     public function showStates($state){
-        return Population::where("states",$state)->get();
+        return Population::where("states","like","%".$state."%")->get();
     }
 
     public function index()
